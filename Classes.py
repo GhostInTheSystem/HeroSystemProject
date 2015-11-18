@@ -1,7 +1,7 @@
 class Character:
 	def __init__(self, name):
 		self.name = name
-		sex = None;
+		sex = None
 		height = None
 		mass = None
 		skin = None
@@ -44,16 +44,43 @@ class Character:
 	def addPower(self, Power):
 		self.powers.append(Power)
 	def removePower(self, powerName):
-		#search the array, based on the name
-		pass
+		count = 0
+		for power in powers:
+			if(power.name == powerName):
+				powers.pop(count)
+			count += 1
 	def addSkill(self, Skill):
 		self.skills.append(Skill)
+	def removeSkill(self, skillName):
+		count = 0
+		for skill in skill:
+			if(skill.name == skillName):
+					skills.pop(count)
+			count += 1
 	def addTalent(self, Talent):
 		self.talents.append(Talent)
+	def removeTalent(self, talentName):
+		count = 0
+		for talent in talents:
+			if(talent.name == talentName):
+				talents.pop(count)
+			count += 1
 	def addPerk(self, Perk):
 		self.perks.append(Perk)
+	def removePerk(self, perkName):
+		count = 0
+		for perk in perks:
+			if(perk.name == perkName):
+				perks.pop(count)
+			count += 1
 	def addComplication(self, Complication):
 		self.complications.append(Complication)
+	def removeComplication(self, complicationName):
+		count = 0
+		for complication in complications:
+			if(complication.name == complicationName):
+				complications.pop(count)
+			count += 1
 class Trait:
 	def __init__(self, type, name):
 		self.type = type
