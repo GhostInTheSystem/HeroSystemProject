@@ -93,7 +93,6 @@ class Trait:
 		self.basePointPoolValues = []
 		count = 0
 		for poolName in poolNames:
-			print(poolName)
 			self.basePointPoolNames.append(poolName)
 			self.basePointPoolValues.append(0)
 			count += 1
@@ -119,40 +118,40 @@ class Modifier:
 		self.value = value
 #trait subclass for characteristics
 class Characteristic(Trait):
-	def __init__(self, type, name, rollChar):
-		Trait.__init__(self, type, name)
+	def __init__(self, name, rollChar, *poolNames):
+		Trait.__init__(self, "Characteristic", name, *poolNames)
 		self.rollChar = rollChar
 		roll = 9
 #trait subclass for skills
 class Skill(Trait):
-	def __init__(self, type, name, char, rollSkill):
-		Trait.__init__(self, type, name)
+	def __init__(self, name, char, rollSkill, *poolNames):
+		Trait.__init__(self, "Skill", name, *poolNames)
 		self.char = char
 		self.rollSkill = rollSkill
 		roll = 8
 		basePoints = 1
 #skill subclass for Knowledge, Professional and Science skills
 class KPSSkill(Skill):
-	def __init__(self, type, name, char, kps, field):
-		Skill.__init__(self, type, name, char, True)
+	def __init__(self, name, char, kps, field, *poolNames):
+		Skill.__init__(self, name, char, True, *poolNames)
 		self.kps = kps
 		self.field = field
 		self.elevenRoll = False
 #trait subclass for powers
 class Power(Trait):
-	def __init__(self, type, name, d6Power, costPerD6):
-		Trait.__init__(self, type, name)
+	def __init__(self, type, name, d6Power, costPerD6, *poolNames):
+		Trait.__init__(self, type, name, *poolNames)
 		self.d6Power = d6Power
 		self.costPerD6 = costPerD6
 #power subclass for powers that are part of multipowers
 class MPPower(Power):
-	def __init__(self, type, name, d6Power, costPerD6, fixed):
-		Power.__init__(self, type, name, d6Power, costPerD6)
+	def __init__(self, name, d6Power, costPerD6, fixed, *poolNames):
+		Power.__init__(self, "MPPower", name, d6Power, costPerD6, *poolNames)
 		self.fixed = fixed
 #trait subclass for multipowers
 class Multipower(Trait):
-	def __init__(self, type, name):
-		Trait.__init__(self, type, name)
+	def __init__(self, name, *poolNames):
+		Trait.__init__(self, "Multipower", name, *poolNames)
 		powers = []
 		totalPowersCost = 0
 	#methods for easy adding powers to the multipower class
@@ -166,8 +165,8 @@ class Multipower(Trait):
 			count += 1
 #trait subclass for variable power point pools
 class VPP(Trait):
-	def __init__(self, type, name, pool, control):
-		Trait.__init__(self, type, name)
+	def __init__(self, name, pool, control, *poolNames):
+		Trait.__init__(self, "VPP", name, *poolNames)
 		self.basePoints = pool
 		self.control = control
 		samplePools = []
@@ -199,6 +198,11 @@ class SampleVPP:
 
 
 #Test that makes a trait with type Power, name Test, and two point pools named george and bob			
-testTrait = Trait('Power', 'Test', 'george', 'bob')
+testTrait = Trait('Perk', 'Test', 'george', 'bob')
 print(testTrait.name)
 print(testTrait.basePointPoolNames[0])
+print(" ")
+#Testing a subclass of trait to make sure it inherits properly
+testPower = Power('Power', 'TestPower', True, 5, 'georgio', 'bob')
+print(testPower.name)
+print(testPower.basePointPoolNames[0])
