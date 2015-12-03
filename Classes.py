@@ -196,6 +196,8 @@ class SampleVPP:
 			if(power.name == powerName):
 				powers.pop(count)
 			count += 1	
+
+
 #Test that makes a trait with type Power, name Test, and two point pools named george and bob			
 testTrait = Trait('Power', 'Test', 'george', 'bob')
 print(testTrait.name)
