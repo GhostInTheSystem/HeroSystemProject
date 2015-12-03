@@ -85,16 +85,23 @@ class Character:
 			count += 1
 #superclass for basically all the cool stuff about character; their characteristics, powers, skills, talents, perks and complications
 class Trait:
-	def __init__(self, type, name):
+	def __init__(self, type, name, *poolNames):
 		self.type = type
 		self.name = name
-		modifiers = []
-		basePoints = 0
-		modFlatPoints = 0
-		advTotal = 0
-		limTotal = 0
-		activePoints = (basePoints+modFlatPoints)*(1+advTotal)
-		totalPoints = activePoints/(1+limTotal)
+		self.modifiers = []
+		self.basePointPoolNames = []
+		self.basePointPoolValues = []
+		count = 0
+		for poolName in poolNames:
+			print(poolName)
+			self.basePointPoolNames.append(poolName)
+			self.basePointPoolValues.append(0)
+			count += 1
+		self.modFlatPoints = 0
+		self.advTotal = 0
+		self.limTotal = 0
+		self.activePoints = (sum(self.basePointPoolValues)+self.modFlatPoints)*(1+self.advTotal)
+		self.totalPoints = self.activePoints/(1+self.limTotal)
 	#methods for easy adding modifiers to the trait class
 	def addMod(self, Modifier):
 		self.modifiers.append(Modifier)
@@ -188,4 +195,7 @@ class SampleVPP:
 		for power in powers:
 			if(power.name == powerName):
 				powers.pop(count)
-			count += 1
+			count += 1	
+testTrait = Trait('Power', 'Test', 'george', 'bob')
+print(testTrait.name)
+print(testTrait.basePointPoolNames[0])
