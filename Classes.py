@@ -1,3 +1,4 @@
+#this class represents the character being created. Most of the variables are just fluff, but the maxima are important for the characteristics
 class Character:
 	def __init__(self, name):
 		self.name = name
@@ -41,6 +42,7 @@ class Character:
 		talents = []
 		perks = []
 		complications = []
+	#methods for easy adding traits to the character class
 	def addPower(self, Power):
 		self.powers.append(Power)
 	def removePower(self, powerName):
@@ -81,6 +83,7 @@ class Character:
 			if(complication.name == complicationName):
 				complications.pop(count)
 			count += 1
+#superclass for basically all the cool stuff about character; their characteristics, powers, skills, talents, perks and complications
 class Trait:
 	def __init__(self, type, name):
 		self.type = type
@@ -92,6 +95,7 @@ class Trait:
 		limTotal = 0
 		activePoints = (basePoints+modFlatPoints)*(1+advTotal)
 		totalPoints = activePoints/(1+limTotal)
+	#methods for easy adding modifiers to the trait class
 	def addMod(self, Modifier):
 		self.modifiers.append(Modifier)
 	def removeMod(self, modName):
@@ -100,16 +104,19 @@ class Trait:
 			if(mod.name == modName):
 				modifiers.pop(count)
 			count += 1
+#traits in hero system have ultimate customization, so this class will be aggregated by the trait class
 class Modifier:
 	def __init__(self, id, type, value):
 		self.name = name
 		self.type = type
 		self.value = value
-class Characteristc(Trait):
+#trait subclass for characteristics
+class Characteristic(Trait):
 	def __init__(self, type, name, rollChar):
 		Trait.__init__(self, type, name)
 		self.rollChar = rollChar
 		roll = 9
+#trait subclass for skills
 class Skill(Trait):
 	def __init__(self, type, name, char, rollSkill):
 		Trait.__init__(self, type, name)
@@ -117,26 +124,31 @@ class Skill(Trait):
 		self.rollSkill = rollSkill
 		roll = 8
 		basePoints = 1
+#skill subclass for Knowledge, Professional and Science skills
 class KPSSkill(Skill):
 	def __init__(self, type, name, char, kps, field):
 		Skill.__init__(self, type, name, char, True)
 		self.kps = kps
 		self.field = field
 		self.elevenRoll = False
+#trait subclass for powers
 class Power(Trait):
 	def __init__(self, type, name, d6Power, costPerD6):
 		Trait.__init__(self, type, name)
 		self.d6Power = d6Power
 		self.costPerD6 = costPerD6
+#power subclass for powers that are part of multipowers
 class MPPower(Power):
 	def __init__(self, type, name, d6Power, costPerD6, fixed):
 		Power.__init__(self, type, name, d6Power, costPerD6)
 		self.fixed = fixed
+#trait subclass for multipowers
 class Multipower(Trait):
 	def __init__(self, type, name):
 		Trait.__init__(self, type, name)
 		powers = []
 		totalPowersCost = 0
+	#methods for easy adding powers to the multipower class
 	def addPower(self, MPPower):
 		self.powers.append(MPPower)
 	def removePower(self, powerName):
@@ -145,12 +157,14 @@ class Multipower(Trait):
 			if(power.name == powerName):
 				powers.pop(count)
 			count += 1
+#trait subclass for variable power point pools
 class VPP(Trait):
 	def __init__(self, type, name, pool, control):
 		Trait.__init__(self, type, name)
 		self.basePoints = pool
 		self.control = control
 		samplePools = []
+	#methods for easy adding sample pools to the VPP class
 	def addSamplePool(self, name):
 		samplePools.append(SampleVPP(name, self.basePoints, self.control))
 	def removeSamplePool(self, samplePoolName):
@@ -159,12 +173,14 @@ class VPP(Trait):
 			if(samplePool.name == samplePoolName):
 				samplePools.pop(count)
 			count += 1
+#class for sample pools that will be aggregated by the VPP class
 class SampleVPP:
 	def __init__(self, name, pool, control):
 		self.name = name
 		self.pool = pool
 		self.control = control
 		powers = []
+	#methods for easy adding powers to the SampleVPP class
 	def addPower(self, Power):
 		self.powers.append(Power)
 	def removePower(self, powerName):
