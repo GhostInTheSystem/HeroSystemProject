@@ -197,7 +197,8 @@ class SampleVPP:
 			count += 1	
 
 
-#Test that makes a trait with type Power, name Test, and two point pools named george and bob			
+#Test that makes a trait with type Power, name Test, and two point pools named george and bob	
+'''		
 testTrait = Trait('Perk', 'Test', 'george', 'bob')
 print(testTrait.name)
 print(testTrait.basePointPoolNames[0])
@@ -206,3 +207,4 @@ print(" ")
 testPower = Power('Power', 'TestPower', True, 5, 'georgio', 'bob')
 print(testPower.name)
 print(testPower.basePointPoolNames[0])
+'''
