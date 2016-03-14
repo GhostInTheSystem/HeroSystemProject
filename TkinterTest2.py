@@ -78,7 +78,7 @@ def drawCharDetailsPage():
     heightContent = StringVar()
     heightEntry = Entry(master, textvariable=heightContent, width=17)
     heightEntry.grid(row=45, column = 69)
-    heightEntry.insert(0, """ 5'6" """)
+    heightEntry.insert(0, """5'6" """)
 
 
 
