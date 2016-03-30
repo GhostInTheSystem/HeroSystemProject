@@ -36,64 +36,83 @@ def drawTabSystem():
     charSheetButton.grid(row=817, column=1, columnspan=55, rowspan=136, padx=(25,10))
 drawTabSystem()
 
-#testButton = Button(master, text="Click Me", width=10, height=1, command=lambda: printTextBox())
-#testButton.grid(row=0, column=61)
-
-def retrieveCurrentValues(page):
-    if(page=="CharDetails"): 
-        print(nameContent.get())
-        print(sexContent.get())
-        print(heightContent.get())
-        print(massContent.get())
-        print(skinContent.get())
-        print(hairContent.get())
-        print(eyesContent.get())
-        print(ageContent.get())
-        print(speciesContent.get())
-        print(notesContent.get())
-        print(pointTotalContent.get())
-        print(activePointLimitContent.get())
-        print(complicationPointsContent.get())
-        print(maximaContent.get())
-        print(strMaximaContent.get())
-        print(dexMaximaContent.get())
-        print(conMaximaContent.get())
-        print(intMaximaContent.get())
-        print(egoMaximaContent.get())
-        print(preMaximaContent.get())
-        print(ocvMaximaContent.get())
-        print(dcvMaximaContent.get())
-        print(omcvMaximaContent.get())
-        print(dmcvMaximaContent.get())
-        print(spdMaximaContent.get())
-        print(pdMaximaContent.get())
-        print(edMaximaContent.get())
-        print(recMaximaContent.get())
-        print(endMaximaContent.get())
-        print(bodyMaximaContent.get())
-        print(stunMaximaContent.get())
-        print(runMaximaContent.get())
-        print(swimMaximaContent.get())
-        print(leapMaximaContent.get())
-        print(skillMaximaContent.get())
-    elif(page=="Characteristics"):
-        print(strContent.get())
-        print(dexContent.get())
-        print(conContent.get())
-        print(intContent.get())
-        print(egoContent.get())
-        print(preContent.get())
-        print(ocvContent.get())
-        print(dcvContent.get())
-        print(dmcvContent.get())
-        print(omcvContent.get())
-        print(spdContent.get())
-        print(recContent.get())
-        print(endContent.get())
-        print(bodyContent.get())
-        print(stunContent.get())
-    
 def drawCharDetailsPage():
+    global spacer0
+    global spacer1
+    global spacer2
+    global nameText
+    global nameEntry
+    global sexText
+    global sexEntry
+    global heightText
+    global heightEntry
+    global massText
+    global massEntry
+    global skinText
+    global skinEntry
+    global hairText
+    global hairEntry
+    global eyesText
+    global eyesEntry
+    global ageText
+    global ageEntry
+    global speciesText
+    global speciesEntry
+    global notesText
+    global notesEntry
+    global pointTotalText
+    global pointTotalEntry
+    global activePointLimitText
+    global activePointLimitEntry
+    global complicationPointsText
+    global complicationPointsEntry
+    global maximaText
+    global maximaCheckBox
+    global strMaximaText
+    global strMaximaEntry
+    global dexMaximaText
+    global dexMaximaEntry
+    global conMaximaText
+    global conMaximaEntry
+    global intMaximaText
+    global intMaximaEntry
+    global egoMaximaText
+    global egoMaximaEntry
+    global preMaximaText
+    global preMaximaEntry
+    global ocvMaximaText
+    global ocvMaximaEntry
+    global dcvMaximaText
+    global dcvMaximaEntry
+    global omcvMaximaText
+    global omcvMaximaEntry
+    global dmcvMaximaText
+    global dmcvMaximaEntry
+    global spdMaximaText
+    global spdMaximaEntry
+    global pdMaximaText
+    global pdMaximaEntry
+    global edMaximaText
+    global edMaximaEntry
+    global recMaximaText
+    global recMaximaEntry
+    global endMaximaText
+    global endMaximaEntry
+    global bodyMaximaText
+    global bodyMaximaEntry
+    global stunMaximaText
+    global stunMaximaEntry
+    global runMaximaText
+    global runMaximaEntry
+    global swimMaximaText
+    global swimMaximaEntry
+    global leapMaximaText
+    global leapMaximaEntry
+    global skillMaximaText
+    global skillMaximaEntry
+
+
+
     spacer0 = Text(master, height=1, width=2)
     spacer0.grid(row=45, column=61)
     spacer0.config(state=DISABLED)
@@ -482,6 +501,136 @@ def drawCharDetailsPage():
     submitButton = Button(master, text="Submit", command=lambda: retrieveCurrentValues("CharDetails"))
     submitButton.grid(row=765, column=62, columnspan=74)
 
+def eraseCharDetailsPage():
+    spacer0.grid_forget()
+    spacer1.grid_forget()
+    spacer2.grid_forget()
+    nameText.grid_forget()
+    nameEntry.grid_forget()
+    sexText.grid_forget()
+    sexEntry.grid_forget()
+    heightText.grid_forget()
+    heightEntry.grid_forget()
+    massText.grid_forget()
+    massEntry.grid_forget()
+    skinText.grid_forget()
+    skinEntry.grid_forget()
+    hairText.grid_forget()
+    hairEntry.grid_forget()
+    eyesText.grid_forget()
+    eyesEntry.grid_forget()
+    ageText.grid_forget()
+    ageEntry.grid_forget()
+    speciesText.grid_forget()
+    speciesEntry.grid_forget()
+    notesText.grid_forget()
+    notesEntry.grid_forget()
+    pointTotalText.grid_forget()
+    pointTotalEntry.grid_forget()
+    activePointLimitText.grid_forget()
+    activePointLimitEntry.grid_forget()
+    complicationPointsText.grid_forget()
+    complicationPointsEntry.grid_forget()
+    maximaText.grid_forget()
+    maximaCheckBox.grid_forget()
+    strMaximaText.grid_forget()
+    strMaximaEntry.grid_forget()
+    dexMaximaText.grid_forget()
+    dexMaximaEntry.grid_forget()
+    conMaximaText.grid_forget()
+    conMaximaEntry.grid_forget()
+    intMaximaText.grid_forget()
+    intMaximaEntry.grid_forget()
+    egoMaximaText.grid_forget()
+    egoMaximaEntry.grid_forget()
+    preMaximaText.grid_forget()
+    preMaximaEntry.grid_forget()
+    ocvMaximaText.grid_forget()
+    ocvMaximaEntry.grid_forget()
+    dcvMaximaText.grid_forget()
+    dcvMaximaEntry.grid_forget()
+    omcvMaximaText.grid_forget()
+    omcvMaximaEntry.grid_forget()
+    dmcvMaximaText.grid_forget()
+    dmcvMaximaEntry.grid_forget()
+    spdMaximaText.grid_forget()
+    spdMaximaEntry.grid_forget()
+    pdMaximaText.grid_forget()
+    pdMaximaEntry.grid_forget()
+    edMaximaText.grid_forget()
+    edMaximaEntry.grid_forget()
+    recMaximaText.grid_forget()
+    recMaximaEntry.grid_forget()
+    endMaximaText.grid_forget()
+    endMaximaEntry.grid_forget()
+    bodyMaximaText.grid_forget()
+    bodyMaximaEntry.grid_forget()
+    stunMaximaText.grid_forget()
+    stunMaximaEntry.grid_forget()
+    runMaximaText.grid_forget()
+    runMaximaEntry.grid_forget()
+    swimMaximaText.grid_forget()
+    swimMaximaEntry.grid_forget()
+    leapMaximaText.grid_forget()
+    leapMaximaEntry.grid_forget()
+    skillMaximaText.grid_forget()
+    skillMaximaEntry.grid_forget()
+
+
+def retrieveCurrentValues(page):
+    if(page=="CharDetails"): 
+        print(nameContent.get())
+        print(sexContent.get())
+        print(heightContent.get())
+        print(massContent.get())
+        print(skinContent.get())
+        print(hairContent.get())
+        print(eyesContent.get())
+        print(ageContent.get())
+        print(speciesContent.get())
+        print(notesContent.get())
+        print(pointTotalContent.get())
+        print(activePointLimitContent.get())
+        print(complicationPointsContent.get())
+        print(maximaContent.get())
+        print(strMaximaContent.get())
+        print(dexMaximaContent.get())
+        print(conMaximaContent.get())
+        print(intMaximaContent.get())
+        print(egoMaximaContent.get())
+        print(preMaximaContent.get())
+        print(ocvMaximaContent.get())
+        print(dcvMaximaContent.get())
+        print(omcvMaximaContent.get())
+        print(dmcvMaximaContent.get())
+        print(spdMaximaContent.get())
+        print(pdMaximaContent.get())
+        print(edMaximaContent.get())
+        print(recMaximaContent.get())
+        print(endMaximaContent.get())
+        print(bodyMaximaContent.get())
+        print(stunMaximaContent.get())
+        print(runMaximaContent.get())
+        print(swimMaximaContent.get())
+        print(leapMaximaContent.get())
+        print(skillMaximaContent.get())
+    elif(page=="Characteristics"):
+        print(strContent.get())
+        print(dexContent.get())
+        print(conContent.get())
+        print(intContent.get())
+        print(egoContent.get())
+        print(preContent.get())
+        print(ocvContent.get())
+        print(dcvContent.get())
+        print(dmcvContent.get())
+        print(omcvContent.get())
+        print(spdContent.get())
+        print(recContent.get())
+        print(endContent.get())
+        print(bodyContent.get())
+        print(stunContent.get())
+    
 def drawCharacteristicsPage():
     spacer0 = Text(master, height=1, width=2)
     spacer0.grid(row=45, column=61)
@@ -933,10 +1082,107 @@ def drawCharacteristicsPage():
 
     submitButton = Button(master, text="Submit", command=lambda: retrieveCurrentValues("Characteristics"))
     submitButton.grid(row=940, column=62, columnspan=74)
-    
+
+    submitButton2 = Button(master, text="Submit", command=eraseCharDetailsPage)
+    submitButton2.grid(row=941, column=62, columnspan=74)
 
     
-drawCharacteristicsPage()
+def drawSkillsPage():
+    global spacer0
+    spacer0 = Text(master, height=1, width=2)
+    spacer0.grid(row=45, column=61)
+    spacer0.config(state=DISABLED)
+
+    global strText
+    global strEntry
+    strText = Text(master, height=1, width = 31)
+    strText.grid(row=45, column=62, columnspan=31, sticky=W)
+    strText.insert(INSERT, "Mength")
+    strText.config(state=DISABLED)
+    global strContent
+    strContent = StringVar()
+    strEntry = Entry(master, textvariable=strContent, width=5)
+    strEntry.grid(row=45, column = 93, columnspan=5)
+    strEntry.insert(0, "200")
+
+    global spacer1
+    spacer1 = Text(master, height=1, width=9)
+    spacer1.grid(row=45, column=98)
+    spacer1.config(state=DISABLED)
+
+    global dexText
+    global dexEntry
+    dexText = Text(master, height=1, width = 31)
+    dexText.grid(row=45, column=99, columnspan=31, sticky=W)
+    dexText.insert(INSERT,"Mexterity")
+    dexText.config(state=DISABLED)
+    global dexContent
+    dexContent = StringVar()
+    dexEntry = Entry(master, textvariable=dexContent, width=5)
+    dexEntry.grid(row=45, column = 130, columnspan=5)
+    dexEntry.insert(0, "200")
+
+    global strModButton
+    strModButton = Button(master, text="Mdit Mods", height=1, width=6)
+    strModButton.grid(row=46, column=62, columnspan=6)
+    
+    global strModFrame
+    strModFrame = Frame(master, bd=2, relief=SUNKEN)
+    strModFrame.grid_rowconfigure(0, weight=1)
+    strModFrame.grid_columnconfigure(0, weight=1)
+    yscrollbar = Scrollbar(strModFrame)
+    yscrollbar.grid(row=0, column=1, sticky=N+S)
+    text = Text(strModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
+    text.insert(INSERT, "•Mample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
+    text.config(state=DISABLED)
+    text.grid(row=0, column=0, sticky=N+S+E+W)
+    yscrollbar.config(command=text.yview)
+    strModFrame.grid(row=46, column=68, columnspan=30)
+
+    global dexModButton
+    dexModButton = Button(master, text="Mdit Mods", height=1, width=6)
+    dexModButton.grid(row=46, column=99, columnspan=6)
+
+    global dexModFrame
+    dexModFrame = Frame(master, bd=2, relief=SUNKEN)
+    dexModFrame.grid_rowconfigure(0, weight=1)
+    dexModFrame.grid_columnconfigure(0, weight=1)
+    yscrollbar = Scrollbar(dexModFrame)
+    yscrollbar.grid(row=0, column=1, sticky=N+S)
+    text = Text(dexModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
+    text.insert(INSERT, "•Mample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
+    text.config(state=DISABLED)
+    text.grid(row=0, column=0, sticky=N+S+E+W)
+    yscrollbar.config(command=text.yview)
+    dexModFrame.grid(row=46, column=105, columnspan=30)
+
+    submitButton = Button(master, text="Submit", command=eraseSkillsPage)
+    submitButton.grid(row=840, column=62, columnspan=74)
+
+    submitButton2 = Button(master, text="Submit", command=drawSkillsPage)
+    submitButton2.grid(row=940, column=62, columnspan=74)
+
+
+def eraseSkillsPage():
+    spacer0.grid_forget()
+    
+    strText.grid_forget()
+    strEntry.grid_forget()
+    
+    spacer1.grid_forget()
+
+    dexText.grid_forget()
+    dexEntry.grid_forget()
+
+    strModButton.grid_forget()
+    strModFrame.grid_forget()
+
+    dexModButton.grid_forget()
+    dexModFrame.grid_forget()
+
+
+    
+drawCharacteritiPage()
 
 
 mainloop()
