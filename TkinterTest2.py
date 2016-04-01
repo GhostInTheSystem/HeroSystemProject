@@ -8,6 +8,8 @@ w = Canvas(master, width=5, height=952)
 w.grid(row=0, column=56, rowspan=952, columnspan=5)
 w.create_line(5, 0, 5, 950, fill="#000000", width=5)
 
+
+'''----------Methods for use by all pages----------'''
 def pageSwitch(newPage):
     testText.delete(1.0, END)
     testText.insert(INSERT, newPage)
@@ -34,7 +36,66 @@ def drawTabSystem():
 
     charSheetButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Character Sheet"))
     charSheetButton.grid(row=817, column=1, columnspan=55, rowspan=136, padx=(25,10))
-drawTabSystem()
+
+
+
+def retrieveCurrentValues(page):
+    if(page=="CharDetails"): 
+        print(nameContent.get())
+        print(sexContent.get())
+        print(heightContent.get())
+        print(massContent.get())
+        print(skinContent.get())
+        print(hairContent.get())
+        print(eyesContent.get())
+        print(ageContent.get())
+        print(speciesContent.get())
+        print(notesContent.get())
+        print(pointTotalContent.get())
+        print(activePointLimitContent.get())
+        print(complicationPointsContent.get())
+        print(maximaContent.get())
+        print(strMaximaContent.get())
+        print(dexMaximaContent.get())
+        print(conMaximaContent.get())
+        print(intMaximaContent.get())
+        print(egoMaximaContent.get())
+        print(preMaximaContent.get())
+        print(ocvMaximaContent.get())
+        print(dcvMaximaContent.get())
+        print(omcvMaximaContent.get())
+        print(dmcvMaximaContent.get())
+        print(spdMaximaContent.get())
+        print(pdMaximaContent.get())
+        print(edMaximaContent.get())
+        print(recMaximaContent.get())
+        print(endMaximaContent.get())
+        print(bodyMaximaContent.get())
+        print(stunMaximaContent.get())
+        print(runMaximaContent.get())
+        print(swimMaximaContent.get())
+        print(leapMaximaContent.get())
+        print(skillMaximaContent.get())
+    elif(page=="Characteristics"):
+        print(strContent.get())
+        print(dexContent.get())
+        print(conContent.get())
+        print(intContent.get())
+        print(egoContent.get())
+        print(preContent.get())
+        print(ocvContent.get())
+        print(dcvContent.get())
+        print(dmcvContent.get())
+        print(omcvContent.get())
+        print(spdContent.get())
+        print(recContent.get())
+        print(endContent.get())
+        print(bodyContent.get())
+        print(stunContent.get())
+
+
+
+'''----------CharDetails Page Methods----------'''
 
 def drawCharDetailsPage():
     global spacer0
@@ -577,91 +638,123 @@ def eraseCharDetailsPage():
     skillMaximaEntry.grid_forget()
 
 
-def retrieveCurrentValues(page):
-    if(page=="CharDetails"): 
-        print(nameContent.get())
-        print(sexContent.get())
-        print(heightContent.get())
-        print(massContent.get())
-        print(skinContent.get())
-        print(hairContent.get())
-        print(eyesContent.get())
-        print(ageContent.get())
-        print(speciesContent.get())
-        print(notesContent.get())
-        print(pointTotalContent.get())
-        print(activePointLimitContent.get())
-        print(complicationPointsContent.get())
-        print(maximaContent.get())
-        print(strMaximaContent.get())
-        print(dexMaximaContent.get())
-        print(conMaximaContent.get())
-        print(intMaximaContent.get())
-        print(egoMaximaContent.get())
-        print(preMaximaContent.get())
-        print(ocvMaximaContent.get())
-        print(dcvMaximaContent.get())
-        print(omcvMaximaContent.get())
-        print(dmcvMaximaContent.get())
-        print(spdMaximaContent.get())
-        print(pdMaximaContent.get())
-        print(edMaximaContent.get())
-        print(recMaximaContent.get())
-        print(endMaximaContent.get())
-        print(bodyMaximaContent.get())
-        print(stunMaximaContent.get())
-        print(runMaximaContent.get())
-        print(swimMaximaContent.get())
-        print(leapMaximaContent.get())
-        print(skillMaximaContent.get())
-    elif(page=="Characteristics"):
-        print(strContent.get())
-        print(dexContent.get())
-        print(conContent.get())
-        print(intContent.get())
-        print(egoContent.get())
-        print(preContent.get())
-        print(ocvContent.get())
-        print(dcvContent.get())
-        print(dmcvContent.get())
-        print(omcvContent.get())
-        print(spdContent.get())
-        print(recContent.get())
-        print(endContent.get())
-        print(bodyContent.get())
-        print(stunContent.get())
     
+'''----------Characteristics Page Methods----------'''
+
 def drawCharacteristicsPage():
+    global spacer0
+    global spacer1
+    global strText
+    global strEntry
+    global strModButton
+    global strModFrame
+    global dexText
+    global dexEntry
+    global dexModButton
+    global dexModFrame
+    global conText
+    global conEntry
+    global conModButton
+    global conModFrame
+    global intText
+    global intEntry
+    global intModButton
+    global intModFrame
+    global egoText
+    global egoEntry
+    global egoModButton
+    global egoModFrame
+    global preText
+    global preEntry
+    global preModButton
+    global preModFrame
+    global ocvText
+    global ocvEntry
+    global ocvModButton
+    global ocvModFrame
+    global dcvText
+    global dcvEntry
+    global dcvModButton
+    global dcvModFrame
+    global omcvText
+    global omcvEntry
+    global omcvModButton
+    global omcvModFrame
+    global dmcvText
+    global dmcvEntry
+    global dmcvModButton
+    global dmcvModFrame
+    global spdText
+    global spdEntry
+    global spdModButton
+    global spdModFrame
+    global runText
+    global runEntry
+    global runModButton
+    global runModFrame
+    global swimText
+    global swimEntry
+    global swimModButton
+    global swimModFrame
+    global leapText
+    global leapEntry
+    global leapModButton
+    global leapModFrame
+    global pdText
+    global pdEntry
+    global pdModButton
+    global pdModFrame
+    global edText
+    global edEntry
+    global edModButton
+    global edModFrame
+    global recText
+    global recEntry
+    global recModButton
+    global recModFrame
+    global endText
+    global endEntry
+    global endModButton
+    global endModFrame
+    global bodyText
+    global bodyEntry
+    global bodyModButton
+    global bodyModFrame
+    global stunText
+    global stunEntry
+    global stunModButton
+    global stunModFrame
+    
     spacer0 = Text(master, height=1, width=2)
-    spacer0.grid(row=45, column=61)
+    spacer0.grid(row=50, column=61)
     spacer0.config(state=DISABLED)
 
     strText = Text(master, height=1, width = 31)
-    strText.grid(row=45, column=62, columnspan=31, sticky=W)
+    strText.grid(row=50, column=62, columnspan=31, sticky=W)
     strText.insert(INSERT, "Strength")
     strText.config(state=DISABLED)
     global strContent
     strContent = StringVar()
     strEntry = Entry(master, textvariable=strContent, width=5)
-    strEntry.grid(row=45, column = 93, columnspan=5)
+    strEntry.grid(row=50, column = 93, columnspan=5)
     strEntry.insert(0, "100")
 
     spacer1 = Text(master, height=1, width=9)
-    spacer1.grid(row=45, column=98)
+    spacer1.grid(row=50, column=98)
     spacer1.config(state=DISABLED)
 
     dexText = Text(master, height=1, width = 31)
-    dexText.grid(row=45, column=99, columnspan=31, sticky=W)
+    dexText.grid(row=50, column=99, columnspan=31, sticky=W)
     dexText.insert(INSERT,"Dexterity")
     dexText.config(state=DISABLED)
     global dexContent
     dexContent = StringVar()
     dexEntry = Entry(master, textvariable=dexContent, width=5)
-    dexEntry.grid(row=45, column = 130, columnspan=5)
+    dexEntry.grid(row=50, column = 130, columnspan=5)
     dexEntry.insert(0, "100")
 
     strModButton = Button(master, text="Edit Mods", height=1, width=6)
-    strModButton.grid(row=46, column=62, columnspan=6)
+    strModButton.grid(row=51, column=62, columnspan=6)
     
     strModFrame = Frame(master, bd=2, relief=SUNKEN)
     strModFrame.grid_rowconfigure(0, weight=1)
@@ -673,10 +766,10 @@ def drawCharacteristicsPage():
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    strModFrame.grid(row=46, column=68, columnspan=30)
+    strModFrame.grid(row=51, column=68, columnspan=30)
 
     dexModButton = Button(master, text="Edit Mods", height=1, width=6)
-    dexModButton.grid(row=46, column=99, columnspan=6)
+    dexModButton.grid(row=51, column=99, columnspan=6)
 
     dexModFrame = Frame(master, bd=2, relief=SUNKEN)
     dexModFrame.grid_rowconfigure(0, weight=1)
@@ -688,32 +781,32 @@ def drawCharacteristicsPage():
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    dexModFrame.grid(row=46, column=105, columnspan=30)
+    dexModFrame.grid(row=51, column=105, columnspan=30)
 
 
 
     conText = Text(master, height=1, width = 31)
-    conText.grid(row=115, column=62, columnspan=31, sticky=W)
+    conText.grid(row=137, column=62, columnspan=31, sticky=W)
     conText.insert(INSERT, "Constitution")
     conText.config(state=DISABLED)
     global conContent
     conContent = StringVar()
     conEntry = Entry(master, textvariable=conContent, width=5)
-    conEntry.grid(row=115, column = 93, columnspan=5)
+    conEntry.grid(row=137, column = 93, columnspan=5)
     conEntry.insert(0, "100")
 
     intText = Text(master, height=1, width = 31)
-    intText.grid(row=115, column=99, columnspan=31, sticky=W)
+    intText.grid(row=137, column=99, columnspan=31, sticky=W)
     intText.insert(INSERT,"Intelligence")
     intText.config(state=DISABLED)
     global intContent
     intContent = StringVar()
     intEntry = Entry(master, textvariable=intContent, width=5)
-    intEntry.grid(row=115, column = 130, columnspan=5)
+    intEntry.grid(row=137, column = 130, columnspan=5)
     intEntry.insert(0, "100")
 
     conModButton = Button(master, text="Edit Mods", height=1, width=6)
-    conModButton.grid(row=116, column=62, columnspan=6)
+    conModButton.grid(row=138, column=62, columnspan=6)
     
     conModFrame = Frame(master, bd=2, relief=SUNKEN)
     conModFrame.grid_rowconfigure(0, weight=1)
@@ -721,14 +814,14 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(conModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(conModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    conModFrame.grid(row=116, column=68, columnspan=30)
+    conModFrame.grid(row=138, column=68, columnspan=30)
 
     intModButton = Button(master, text="Edit Mods", height=1, width=6)
-    intModButton.grid(row=116, column=99, columnspan=6)
+    intModButton.grid(row=138, column=99, columnspan=6)
 
     intModFrame = Frame(master, bd=2, relief=SUNKEN)
     intModFrame.grid_rowconfigure(0, weight=1)
@@ -736,36 +829,36 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(intModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(intModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    intModFrame.grid(row=116, column=105, columnspan=30)
+    intModFrame.grid(row=138, column=105, columnspan=30)
 
 
 
     egoText = Text(master, height=1, width = 31)
-    egoText.grid(row=145, column=62, columnspan=31, sticky=W)
+    egoText.grid(row=220, column=62, columnspan=31, sticky=W)
     egoText.insert(INSERT, "Ego")
     egoText.config(state=DISABLED)
     global egoContent
     egoContent = StringVar()
     egoEntry = Entry(master, textvariable=egoContent, width=5)
-    egoEntry.grid(row=145, column = 93, columnspan=5)
+    egoEntry.grid(row=220, column = 93, columnspan=5)
     egoEntry.insert(0, "100")
 
     preText = Text(master, height=1, width = 31)
-    preText.grid(row=145, column=99, columnspan=31, sticky=W)
+    preText.grid(row=220, column=99, columnspan=31, sticky=W)
     preText.insert(INSERT,"Presence")
     preText.config(state=DISABLED)
     global preContent
     preContent = StringVar()
     preEntry = Entry(master, textvariable=preContent, width=5)
-    preEntry.grid(row=145, column = 130, columnspan=5)
+    preEntry.grid(row=220, column = 130, columnspan=5)
     preEntry.insert(0, "100")
 
     egoModButton = Button(master, text="Edit Mods", height=1, width=6)
-    egoModButton.grid(row=146, column=62, columnspan=6)
+    egoModButton.grid(row=221, column=62, columnspan=6)
     
     egoModFrame = Frame(master, bd=2, relief=SUNKEN)
     egoModFrame.grid_rowconfigure(0, weight=1)
@@ -773,14 +866,14 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(egoModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(egoModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    egoModFrame.grid(row=146, column=68, columnspan=30)
+    egoModFrame.grid(row=221, column=68, columnspan=30)
 
     preModButton = Button(master, text="Edit Mods", height=1, width=6)
-    preModButton.grid(row=146, column=99, columnspan=6)
+    preModButton.grid(row=221, column=99, columnspan=6)
 
     preModFrame = Frame(master, bd=2, relief=SUNKEN)
     preModFrame.grid_rowconfigure(0, weight=1)
@@ -788,36 +881,36 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(preModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(preModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    preModFrame.grid(row=146, column=105, columnspan=30)
+    preModFrame.grid(row=221, column=105, columnspan=30)
 
 
 
     ocvText = Text(master, height=1, width = 31)
-    ocvText.grid(row=325, column=62, columnspan=31, sticky=W)
+    ocvText.grid(row=305, column=62, columnspan=31, sticky=W)
     ocvText.insert(INSERT, "Offensive Combat Value")
     ocvText.config(state=DISABLED)
     global ocvContent
     ocvContent = StringVar()
     ocvEntry = Entry(master, textvariable=ocvContent, width=5)
-    ocvEntry.grid(row=325, column = 93, columnspan=5)
+    ocvEntry.grid(row=305, column = 93, columnspan=5)
     ocvEntry.insert(0, "100")
 
     dcvText = Text(master, height=1, width = 31)
-    dcvText.grid(row=325, column=99, columnspan=31, sticky=W)
+    dcvText.grid(row=305, column=99, columnspan=31, sticky=W)
     dcvText.insert(INSERT,"Defensive Combat Value")
     dcvText.config(state=DISABLED)
     global dcvContent
     dcvContent = StringVar()
     dcvEntry = Entry(master, textvariable=dcvContent, width=5)
-    dcvEntry.grid(row=325, column = 130, columnspan=5)
+    dcvEntry.grid(row=305, column = 130, columnspan=5)
     dcvEntry.insert(0, "100")
 
     ocvModButton = Button(master, text="Edit Mods", height=1, width=6)
-    ocvModButton.grid(row=326, column=62, columnspan=6)
+    ocvModButton.grid(row=306, column=62, columnspan=6)
     
     ocvModFrame = Frame(master, bd=2, relief=SUNKEN)
     ocvModFrame.grid_rowconfigure(0, weight=1)
@@ -825,14 +918,14 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(ocvModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(ocvModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    ocvModFrame.grid(row=326, column=68, columnspan=30)
+    ocvModFrame.grid(row=306, column=68, columnspan=30)
 
     dcvModButton = Button(master, text="Edit Mods", height=1, width=6)
-    dcvModButton.grid(row=326, column=99, columnspan=6)
+    dcvModButton.grid(row=306, column=99, columnspan=6)
 
     dcvModFrame = Frame(master, bd=2, relief=SUNKEN)
     dcvModFrame.grid_rowconfigure(0, weight=1)
@@ -840,36 +933,36 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(dcvModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(dcvModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    dcvModFrame.grid(row=326, column=105, columnspan=30)
+    dcvModFrame.grid(row=306, column=105, columnspan=30)
 
 
 
     omcvText = Text(master, height=1, width = 31)
-    omcvText.grid(row=395, column=62, columnspan=31, sticky=W)
+    omcvText.grid(row=390, column=62, columnspan=31, sticky=W)
     omcvText.insert(INSERT, "Offensive Mental Combat Value")
     omcvText.config(state=DISABLED)
     global omcvContent
     omcvContent = StringVar()
     omcvEntry = Entry(master, textvariable=omcvContent, width=5)
-    omcvEntry.grid(row=395, column = 93, columnspan=5)
+    omcvEntry.grid(row=390, column = 93, columnspan=5)
     omcvEntry.insert(0, "100")
 
     dmcvText = Text(master, height=1, width = 31)
-    dmcvText.grid(row=395, column=99, columnspan=31, sticky=W)
+    dmcvText.grid(row=390, column=99, columnspan=31, sticky=W)
     dmcvText.insert(INSERT,"Defensive Mental Combat Value")
     dmcvText.config(state=DISABLED)
     global dmcvContent
     dmcvContent = StringVar()
     dmcvEntry = Entry(master, textvariable=dmcvContent, width=5)
-    dmcvEntry.grid(row=395, column = 130, columnspan=5)
+    dmcvEntry.grid(row=390, column = 130, columnspan=5)
     dmcvEntry.insert(0, "100")
 
     omcvModButton = Button(master, text="Edit Mods", height=1, width=6)
-    omcvModButton.grid(row=396, column=62, columnspan=6)
+    omcvModButton.grid(row=391, column=62, columnspan=6)
     
     omcvModFrame = Frame(master, bd=2, relief=SUNKEN)
     omcvModFrame.grid_rowconfigure(0, weight=1)
@@ -877,14 +970,14 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(omcvModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(omcvModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    omcvModFrame.grid(row=396, column=68, columnspan=30)
+    omcvModFrame.grid(row=391, column=68, columnspan=30)
 
     dmcvModButton = Button(master, text="Edit Mods", height=1, width=6)
-    dmcvModButton.grid(row=396, column=99, columnspan=6)
+    dmcvModButton.grid(row=391, column=99, columnspan=6)
 
     dmcvModFrame = Frame(master, bd=2, relief=SUNKEN)
     dmcvModFrame.grid_rowconfigure(0, weight=1)
@@ -892,26 +985,36 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(dmcvModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(dmcvModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    dmcvModFrame.grid(row=396, column=105, columnspan=30)
+    dmcvModFrame.grid(row=391, column=105, columnspan=30)
 
 
 
     spdText = Text(master, height=1, width = 31)
-    spdText.grid(row=535, column=62, columnspan=31, sticky=W)
+    spdText.grid(row=475, column=62, columnspan=31, sticky=W)
     spdText.insert(INSERT, "Speed")
     spdText.config(state=DISABLED)
     global spdContent
     spdContent = StringVar()
     spdEntry = Entry(master, textvariable=spdContent, width=5)
-    spdEntry.grid(row=535, column = 93, columnspan=5)
+    spdEntry.grid(row=475, column = 93, columnspan=5)
     spdEntry.insert(0, "100")
 
+    runText = Text(master, height=1, width = 31)
+    runText.grid(row=475, column=99, columnspan=31, sticky=W)
+    runText.insert(INSERT,"Run Speed")
+    runText.config(state=DISABLED)
+    global runContent
+    runContent = StringVar()
+    runEntry = Entry(master, textvariable=runContent, width=5)
+    runEntry.grid(row=475, column = 130, columnspan=5)
+    runEntry.insert(0, "100")
+
     spdModButton = Button(master, text="Edit Mods", height=1, width=6)
-    spdModButton.grid(row=536, column=62, columnspan=6)
+    spdModButton.grid(row=476, column=62, columnspan=6)
     
     spdModFrame = Frame(master, bd=2, relief=SUNKEN)
     spdModFrame.grid_rowconfigure(0, weight=1)
@@ -919,36 +1022,103 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(spdModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(spdModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    spdModFrame.grid(row=536, column=68, columnspan=30)
+    spdModFrame.grid(row=476, column=68, columnspan=30)
+
+    runModButton = Button(master, text="Edit Mods", height=1, width=6)
+    runModButton.grid(row=476, column=99, columnspan=6)
+
+    runModFrame = Frame(master, bd=2, relief=SUNKEN)
+    runModFrame.grid_rowconfigure(0, weight=1)
+    runModFrame.grid_columnconfigure(0, weight=1)
+    yscrollbar = Scrollbar(runModFrame)
+    yscrollbar.grid(row=0, column=1, sticky=N+S)
+    text = Text(runModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
+    text.config(state=DISABLED)
+    text.grid(row=0, column=0, sticky=N+S+E+W)
+    yscrollbar.config(command=text.yview)
+    runModFrame.grid(row=476, column=105, columnspan=30)
+
+
+
+    swimText = Text(master, height=1, width = 31)
+    swimText.grid(row=560, column=62, columnspan=31, sticky=W)
+    swimText.insert(INSERT, "Swim Speed")
+    swimText.config(state=DISABLED)
+    global swimContent
+    swimContent = StringVar()
+    swimEntry = Entry(master, textvariable=swimContent, width=5)
+    swimEntry.grid(row=560, column = 93, columnspan=5)
+    swimEntry.insert(0, "100")
+
+    leapText = Text(master, height=1, width = 31)
+    leapText.grid(row=560, column=99, columnspan=31, sticky=W)
+    leapText.insert(INSERT,"Leap Speed")
+    leapText.config(state=DISABLED)
+    global leapContent
+    leapContent = StringVar()
+    leapEntry = Entry(master, textvariable=leapContent, width=5)
+    leapEntry.grid(row=560, column = 130, columnspan=5)
+    leapEntry.insert(0, "100")
+
+    swimModButton = Button(master, text="Edit Mods", height=1, width=6)
+    swimModButton.grid(row=561, column=62, columnspan=6)
+    
+    swimModFrame = Frame(master, bd=2, relief=SUNKEN)
+    swimModFrame.grid_rowconfigure(0, weight=1)
+    swimModFrame.grid_columnconfigure(0, weight=1)
+    yscrollbar = Scrollbar(swimModFrame)
+    yscrollbar.grid(row=0, column=1, sticky=N+S)
+    text = Text(swimModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
+    text.config(state=DISABLED)
+    text.grid(row=0, column=0, sticky=N+S+E+W)
+    yscrollbar.config(command=text.yview)
+    swimModFrame.grid(row=561, column=68, columnspan=30)
+
+    leapModButton = Button(master, text="Edit Mods", height=1, width=6)
+    leapModButton.grid(row=561, column=99, columnspan=6)
+
+    leapModFrame = Frame(master, bd=2, relief=SUNKEN)
+    leapModFrame.grid_rowconfigure(0, weight=1)
+    leapModFrame.grid_columnconfigure(0, weight=1)
+    yscrollbar = Scrollbar(leapModFrame)
+    yscrollbar.grid(row=0, column=1, sticky=N+S)
+    text = Text(leapModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
+    text.config(state=DISABLED)
+    text.grid(row=0, column=0, sticky=N+S+E+W)
+    yscrollbar.config(command=text.yview)
+    leapModFrame.grid(row=561, column=105, columnspan=30)
 
 
 
     pdText = Text(master, height=1, width = 31)
-    pdText.grid(row=675, column=62, columnspan=31, sticky=W)
+    pdText.grid(row=645, column=62, columnspan=31, sticky=W)
     pdText.insert(INSERT, "Physical Defense")
     pdText.config(state=DISABLED)
     global pdContent
     pdContent = StringVar()
     pdEntry = Entry(master, textvariable=pdContent, width=5)
-    pdEntry.grid(row=675, column = 93, columnspan=5)
+    pdEntry.grid(row=645, column = 93, columnspan=5)
     pdEntry.insert(0, "100")
 
     edText = Text(master, height=1, width = 31)
-    edText.grid(row=675, column=99, columnspan=31, sticky=W)
+    edText.grid(row=645, column=99, columnspan=31, sticky=W)
     edText.insert(INSERT,"Energy Defense")
     edText.config(state=DISABLED)
     global edContent
     edContent = StringVar()
     edEntry = Entry(master, textvariable=edContent, width=5)
-    edEntry.grid(row=675, column = 130, columnspan=5)
+    edEntry.grid(row=645, column = 130, columnspan=5)
     edEntry.insert(0, "100")
 
     pdModButton = Button(master, text="Edit Mods", height=1, width=6)
-    pdModButton.grid(row=676, column=62, columnspan=6)
+    pdModButton.grid(row=646, column=62, columnspan=6)
     
     pdModFrame = Frame(master, bd=2, relief=SUNKEN)
     pdModFrame.grid_rowconfigure(0, weight=1)
@@ -956,14 +1126,14 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(pdModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(pdModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    pdModFrame.grid(row=676, column=68, columnspan=30)
+    pdModFrame.grid(row=646, column=68, columnspan=30)
 
     edModButton = Button(master, text="Edit Mods", height=1, width=6)
-    edModButton.grid(row=676, column=99, columnspan=6)
+    edModButton.grid(row=646, column=99, columnspan=6)
 
     edModFrame = Frame(master, bd=2, relief=SUNKEN)
     edModFrame.grid_rowconfigure(0, weight=1)
@@ -971,36 +1141,36 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(edModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(edModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    edModFrame.grid(row=676, column=105, columnspan=30)
+    edModFrame.grid(row=646, column=105, columnspan=30)
 
 
 
     recText = Text(master, height=1, width = 31)
-    recText.grid(row=675, column=62, columnspan=31, sticky=W)
+    recText.grid(row=730, column=62, columnspan=31, sticky=W)
     recText.insert(INSERT, "Recovery")
     recText.config(state=DISABLED)
     global recContent
     recContent = StringVar()
     recEntry = Entry(master, textvariable=recContent, width=5)
-    recEntry.grid(row=675, column = 93, columnspan=5)
+    recEntry.grid(row=730, column = 93, columnspan=5)
     recEntry.insert(0, "100")
 
     endText = Text(master, height=1, width = 31)
-    endText.grid(row=675, column=99, columnspan=31, sticky=W)
+    endText.grid(row=730, column=99, columnspan=31, sticky=W)
     endText.insert(INSERT,"Endurance")
     endText.config(state=DISABLED)
     global endContent
     endContent = StringVar()
     endEntry = Entry(master, textvariable=endContent, width=5)
-    endEntry.grid(row=675, column = 130, columnspan=5)
+    endEntry.grid(row=730, column = 130, columnspan=5)
     endEntry.insert(0, "100")
 
     recModButton = Button(master, text="Edit Mods", height=1, width=6)
-    recModButton.grid(row=676, column=62, columnspan=6)
+    recModButton.grid(row=731, column=62, columnspan=6)
     
     recModFrame = Frame(master, bd=2, relief=SUNKEN)
     recModFrame.grid_rowconfigure(0, weight=1)
@@ -1008,14 +1178,14 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(recModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(recModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    recModFrame.grid(row=676, column=68, columnspan=30)
+    recModFrame.grid(row=731, column=68, columnspan=30)
 
     endModButton = Button(master, text="Edit Mods", height=1, width=6)
-    endModButton.grid(row=676, column=99, columnspan=6)
+    endModButton.grid(row=731, column=99, columnspan=6)
 
     endModFrame = Frame(master, bd=2, relief=SUNKEN)
     endModFrame.grid_rowconfigure(0, weight=1)
@@ -1023,11 +1193,11 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(endModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(endModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
-    endModFrame.grid(row=676, column=105, columnspan=30)
+    endModFrame.grid(row=731, column=105, columnspan=30)
 
 
     bodyText = Text(master, height=1, width = 31)
@@ -1059,7 +1229,7 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(bodyModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(bodyModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
@@ -1074,18 +1244,103 @@ def drawCharacteristicsPage():
     yscrollbar = Scrollbar(stunModFrame)
     yscrollbar.grid(row=0, column=1, sticky=N+S)
     text = Text(stunModFrame, wrap=WORD, bd=0, yscrollcommand=yscrollbar.set, height = 2, width = 30)
-    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Poinnts)")
+    text.insert(INSERT, "•Sample Modifier(1/4 Advantage) \n•Another Modifier(1/2 Limitation) \n•Yet Another Sample(+5 Points)")
     text.config(state=DISABLED)
     text.grid(row=0, column=0, sticky=N+S+E+W)
     yscrollbar.config(command=text.yview)
     stunModFrame.grid(row=816, column=105, columnspan=30)
 
-    submitButton = Button(master, text="Submit", command=lambda: retrieveCurrentValues("Characteristics"))
-    submitButton.grid(row=940, column=62, columnspan=74)
+    #submitButton = Button(master, text="Submit", command=lambda: retrieveCurrentValues("Characteristics"))
+    #submitButton.grid(row=900, column=62, columnspan=74)
 
-    submitButton2 = Button(master, text="Submit", command=eraseCharDetailsPage)
-    submitButton2.grid(row=941, column=62, columnspan=74)
+    submitButton = Button(master, text="Submit", command=eraseCharacteristicsPage)
+    submitButton.grid(row=900, column=62, columnspan=74)
 
+
+
+def eraseCharacteristicsPage():
+    spacer0.grid_forget()
+    spacer1.grid_forget()
+    strText.grid_forget()
+    strEntry.grid_forget()
+    strModButton.grid_forget()
+    strModFrame.grid_forget()
+    dexText.grid_forget()
+    dexEntry.grid_forget()
+    dexModButton.grid_forget()
+    dexModFrame.grid_forget()
+    conText.grid_forget()
+    conEntry.grid_forget()
+    conModButton.grid_forget()
+    conModFrame.grid_forget()
+    intText.grid_forget()
+    intEntry.grid_forget()
+    intModButton.grid_forget()
+    intModFrame.grid_forget()
+    egoText.grid_forget()
+    egoEntry.grid_forget()
+    egoModButton.grid_forget()
+    egoModFrame.grid_forget()
+    preText.grid_forget()
+    preEntry.grid_forget()
+    preModButton.grid_forget()
+    preModFrame.grid_forget()
+    ocvText.grid_forget()
+    ocvEntry.grid_forget()
+    ocvModButton.grid_forget()
+    ocvModFrame.grid_forget()
+    dcvText.grid_forget()
+    dcvEntry.grid_forget()
+    dcvModButton.grid_forget()
+    dcvModFrame.grid_forget()
+    omcvText.grid_forget()
+    omcvEntry.grid_forget()
+    omcvModButton.grid_forget()
+    omcvModFrame.grid_forget()
+    dmcvText.grid_forget()
+    dmcvEntry.grid_forget()
+    dmcvModButton.grid_forget()
+    dmcvModFrame.grid_forget()
+    spdText.grid_forget()
+    spdEntry.grid_forget()
+    spdModButton.grid_forget()
+    spdModFrame.grid_forget()
+    runText.grid_forget()
+    runEntry.grid_forget()
+    runModButton.grid_forget()
+    runModFrame.grid_forget()
+    swimText.grid_forget()
+    swimEntry.grid_forget()
+    swimModButton.grid_forget()
+    swimModFrame.grid_forget()
+    leapText.grid_forget()
+    leapEntry.grid_forget()
+    leapModButton.grid_forget()
+    leapModFrame.grid_forget()
+    pdText.grid_forget()
+    pdEntry.grid_forget()
+    pdModButton.grid_forget()
+    pdModFrame.grid_forget()
+    edText.grid_forget()
+    edEntry.grid_forget()
+    edModButton.grid_forget()
+    edModFrame.grid_forget()
+    recText.grid_forget()
+    recEntry.grid_forget()
+    recModButton.grid_forget()
+    recModFrame.grid_forget()
+    endText.grid_forget()
+    endEntry.grid_forget()
+    endModButton.grid_forget()
+    endModFrame.grid_forget()
+    bodyText.grid_forget()
+    bodyEntry.grid_forget()
+    bodyModButton.grid_forget()
+    bodyModFrame.grid_forget()
+    stunText.grid_forget()
+    stunEntry.grid_forget()
+    stunModButton.grid_forget()
+    stunModFrame.grid_forget()
     
 def drawSkillsPage():
     global spacer0
@@ -1182,7 +1437,8 @@ def eraseSkillsPage():
 
 
     
-drawCharacteritiPage()
+drawTabSystem()
+drawCharacteristicsPage()
 
 
 mainloop()
