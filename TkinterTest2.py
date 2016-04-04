@@ -9,6 +9,7 @@ w.grid(row=0, column=56, rowspan=952, columnspan=5)
 w.create_line(5, 0, 5, 950, fill="#000000", width=5)
 
 
+
 '''----------Methods for use by all pages----------'''
 def pageSwitch(newPage):
     testText.delete(1.0, END)
