@@ -3,10 +3,10 @@ from tkinter import *
 master = Tk()
 master.geometry('952x952')
 
-w = Canvas(master, width=5, height=952)
+canvas = Canvas(master, width=952, height=952)
 
-w.grid(row=0, column=56, rowspan=952, columnspan=5)
-w.create_line(5, 0, 5, 950, fill="#000000", width=5)
+canvas.grid(row=0, column=0, rowspan=952, columnspan=952)
+canvas.create_line(160, 0, 160, 950, fill="#000000", width=1)
 
 
 
@@ -17,26 +17,29 @@ def pageSwitch(newPage):
 
 photo=PhotoImage(file="Test.gif")
 def drawTabSystem():
-    charDetailsButton = Button(master, image=photo, width=160, height = 127, command=lambda: pageSwitch("Character Details"))
-    charDetailsButton.grid(row=0, column=1, rowspan=136, columnspan=55, padx=(25,10))
+    charDetailsButton = Button(master, image=photo, width=120, height = 120, command=lambda: pageSwitch("Character Details"))
+    canvas.create_window(80, 80, window=charDetailsButton)
 
-    characteristicButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Characteristics"))
-    characteristicButton.grid(row=137, column=1, rowspan=136, columnspan=55, padx=(25,10))
+    characteristicButton = Button(master, image=photo, width=120, height=120, command=lambda: pageSwitch("Characteristics"))
+    canvas.create_window(80, 212, window=characteristicButton)
 
-    skillsButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Skills"))
-    skillsButton.grid(row=273, column=1, columnspan=55, rowspan=136, padx=(25,10))
+    skillsButton = Button(master, image=photo, width=120, height=120, command=lambda: pageSwitch("Skills"))
+    canvas.create_window(80, 344, window=skillsButton)
 
-    perkTalentButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Perks/Talents"))
-    perkTalentButton.grid(row=409, column=1, columnspan=55, rowspan=136, padx=(25,10))
+    perkTalentButton = Button(master, image=photo, width=120, height=120, command=lambda: pageSwitch("Perks/Talents"))
+    canvas.create_window(80, 476, window=perkTalentButton)
 
-    powerButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Powers"))
-    powerButton.grid(row=545, column=1, columnspan=55, rowspan=136, padx=(25,10))
+    powerButton = Button(master, image=photo, width=120, height=120, command=lambda: pageSwitch("Powers"))
+    canvas.create_window(80, 608, window=powerButton)
 
-    complicationButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Complications"))
-    complicationButton.grid(row=681, column=1, columnspan=55, rowspan=136, padx=(25,10))
+    complicationButton = Button(master, image=photo, width=120, height=120, command=lambda: pageSwitch("Complications"))
+    canvas.create_window(80, 740, window=complicationButton)
 
-    charSheetButton = Button(master, image=photo, width=160, height=127, command=lambda: pageSwitch("Character Sheet"))
-    charSheetButton.grid(row=817, column=1, columnspan=55, rowspan=136, padx=(25,10))
+    charSheetButton = Button(master, image=photo, width=120, height=120, command=lambda: pageSwitch("Character Sheet"))
+    canvas.create_window(80, 872, window=charSheetButton)
+
+drawTabSystem();
+
 
 
 
@@ -174,26 +177,15 @@ def drawCharDetailsPage():
 
 
 
-    spacer0 = Text(master, height=1, width=2)
-    spacer0.grid(row=45, column=61)
-    spacer0.config(state=DISABLED)
-
     nameText = Text(master, height=1, width=7)
-    nameText.grid(row=45, column=62, columnspan=7)
-    nameText.insert(INSERT, "Name")
-    nameText.config(state=DISABLED) 
+    nameText.insert(INSERT, "Nameeee")
+    nameText.config(state=DISABLED)
     global nameContent
     nameContent = StringVar()
     nameEntry = Entry(master, textvariable=nameContent, width=17)
-    nameEntry.grid(row=45, column=69, columnspan=17)
     nameEntry.insert(0, "Captain Kharok")
-
-    spacer1 = Text(master, height=1, width=9)
-    spacer1.grid(row=45, column=86)
-    spacer1.config(state=DISABLED)
-
+'''
     sexText = Text(master, height=1, width=7)
-    sexText.grid(row=45, column=87, columnspan=7)
     sexText.insert(INSERT, "Sex")
     sexText.config(state=DISABLED) 
     global sexContent
@@ -202,18 +194,12 @@ def drawCharDetailsPage():
     sexEntry.grid(row=45, column=94, columnspan=17)
     sexEntry.insert(0, "Male")
 
-    spacer2 = Text(master, height=1, width=9)
-    spacer2.grid(row=45, column=111)
-    spacer2.config(state=DISABLED)
-
     heightText = Text(master, height=1, width=7)
-    heightText.grid(row=45, column=112, columnspan=7)
     heightText.insert(INSERT, "Height")
     heightText.config(state=DISABLED) 
     global heightContent
     heightContent = StringVar()
     heightEntry = Entry(master, textvariable=heightContent, width=17)
-    heightEntry.grid(row=45, column=119, columnspan=17)
     heightEntry.insert(0, """5'6" """)
 
 
@@ -638,8 +624,8 @@ def eraseCharDetailsPage():
     skillMaximaEntry.grid_forget()
 
 
-    
-'''------------------------------------------------------Characteristics Page Methods------------------------------------------------------'''
+   
+------------------------------------------------------Characteristics Page Methods------------------------------------------------------
 def drawCharacteristicsPage():
     global spacer0
     global spacer1
@@ -1437,7 +1423,8 @@ def eraseSkillsPage():
 
     
 drawTabSystem()
-drawCharacteristicsPage()
+'''
+drawCharDetailsPage()
 
 
 mainloop()
