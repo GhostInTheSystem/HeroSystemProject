@@ -6,7 +6,7 @@ master.geometry('952x952')
 canvas = Canvas(master, width=952, height=952)
 
 canvas.grid(row=0, column=0, rowspan=952, columnspan=952)
-canvas.create_line(160, 0, 160, 950, fill="#000000", width=1)
+canvas.create_line(160, 0, 160, 950, fill="#000000", width=5)
 
 
 
@@ -178,108 +178,113 @@ def drawCharDetailsPage():
 
 
     nameText = Text(master, height=1, width=7)
-    nameText.insert(INSERT, "Nameeee")
+    nameText.insert(INSERT, "Name")
     nameText.config(state=DISABLED)
+    canvas.create_window(245, 50, window=nameText)
     global nameContent
     nameContent = StringVar()
     nameEntry = Entry(master, textvariable=nameContent, width=17)
     nameEntry.insert(0, "Captain Kharok")
-'''
+    canvas.create_window(336, 50, window=nameEntry)
+
     sexText = Text(master, height=1, width=7)
     sexText.insert(INSERT, "Sex")
-    sexText.config(state=DISABLED) 
+    sexText.config(state=DISABLED)
+    canvas.create_window(483, 50, window=sexText)
     global sexContent
     sexContent = StringVar()
     sexEntry = Entry(master, textvariable=sexContent, width=17)
-    sexEntry.grid(row=45, column=94, columnspan=17)
     sexEntry.insert(0, "Male")
+    canvas.create_window(574, 50, window=sexEntry)
 
     heightText = Text(master, height=1, width=7)
     heightText.insert(INSERT, "Height")
-    heightText.config(state=DISABLED) 
+    heightText.config(state=DISABLED)
+    canvas.create_window(721, 50, window=heightText)
     global heightContent
     heightContent = StringVar()
     heightEntry = Entry(master, textvariable=heightContent, width=17)
     heightEntry.insert(0, """5'6" """)
+    canvas.create_window(812, 50, window=heightEntry)
 
 
 
     massText = Text(master, height=1, width=7)
-    massText.grid(row=90, column=62, columnspan=7)
     massText.insert(INSERT, "Mass")
-    massText.config(state=DISABLED) 
+    massText.config(state=DISABLED)
+    canvas.create_window(245, 110, window=massText)
     global massContent
     massContent = StringVar()
     massEntry = Entry(master, textvariable=massContent, width=17)
-    massEntry.grid(row=90, column=69, columnspan=17)
     massEntry.insert(0, "200 kg")
+    canvas.create_window(336, 110, window=massEntry)
 
     skinText = Text(master, height=1, width=7)
-    skinText.grid(row=90, column=87, columnspan=7)
     skinText.insert(INSERT, "Skin")
     skinText.config(state=DISABLED) 
+    canvas.create_window(483, 110, window=skinText)
     global skinContent
     skinContent = StringVar()
     skinEntry = Entry(master, textvariable=skinContent, width=17)
-    skinEntry.grid(row=90, column=94, columnspan=17)
     skinEntry.insert(0, "Red Scales")
+    canvas.create_window(574, 110, window=skinEntry)
 
     hairText = Text(master, height=1, width=7)
-    hairText.grid(row=90, column=112, columnspan=7)
     hairText.insert(INSERT, "Hair")
-    hairText.config(state=DISABLED) 
+    hairText.config(state=DISABLED)
+    canvas.create_window(721, 110, window=hairText) 
     global hairContent
     hairContent = StringVar()
     hairEntry = Entry(master, textvariable=hairContent, width=17)
-    hairEntry.grid(row=90, column=119, columnspan=17)
     hairEntry.insert(0, "Bald")
+    canvas.create_window(812, 110, window=hairEntry)
 
 
 
     eyesText = Text(master, height=1, width=7)
-    eyesText.grid(row=135, column=62, columnspan=7)
     eyesText.insert(INSERT, "Eyes")
-    eyesText.config(state=DISABLED) 
+    eyesText.config(state=DISABLED)
+    canvas.create_window(245, 170, window=eyesText)
     global eyesContent
     eyesContent = StringVar()
     eyesEntry = Entry(master, textvariable=eyesContent, width=17)
-    eyesEntry.grid(row=135, column=69, columnspan=17)
-    eyesEntry.insert(0, "Snakey Yellow")
+    eyesEntry.insert(0, "Snake Eyes")
+    canvas.create_window(336, 170, window=eyesEntry)
 
     ageText = Text(master, height=1, width=7)
-    ageText.grid(row=135, column=87, columnspan=7)
-    ageText.insert(INSERT,"Age")
+    ageText.insert(INSERT, "Age")
     ageText.config(state=DISABLED) 
+    canvas.create_window(483, 170, window=ageText)
     global ageContent
     ageContent = StringVar()
     ageEntry = Entry(master, textvariable=ageContent, width=17)
-    ageEntry.grid(row=135, column=94, columnspan=17)
-    ageEntry.insert(0, "362")
+    ageEntry.insert(0, "300")
+    canvas.create_window(574, 170, window=ageEntry)
 
     speciesText = Text(master, height=1, width=7)
-    speciesText.grid(row=135, column=112, columnspan=7)
     speciesText.insert(INSERT, "Species")
-    speciesText.config(state=DISABLED) 
+    speciesText.config(state=DISABLED)
+    canvas.create_window(721, 170, window=speciesText) 
     global speciesContent
     speciesContent = StringVar()
     speciesEntry = Entry(master, textvariable=speciesContent, width=17)
-    speciesEntry.grid(row=135, column=119, columnspan=17)
     speciesEntry.insert(0, "Gronian")
+    canvas.create_window(812, 170, window=speciesEntry)
     
 
 
     notesText = Text(master, height=1, width = 7)
-    notesText.grid(row=180, column=62, columnspan=7)
-    notesText.insert(INSERT, "Notes")
-    notesText.config(state=DISABLED) 
+    notesText.insert(INSERT, "Notesee")
+    notesText.config(state=DISABLED)
+    canvas.create_window(245, 230, window=notesText)
     global notesContent
     notesContent = StringVar()
-    notesEntry = Entry(master, textvariable=notesContent, width=91)
-    notesEntry.grid(row=180, column = 69, columnspan = 91)
+    notesEntry = Entry(master, textvariable=notesContent, width=86)
+    canvas.create_window(576, 230, window=notesEntry)
     notesEntry.insert(0, "Just insert some notes about the character here. Any fluff details that don't fit in the categories above.")
 
 
-    
+'''    
     pointTotalText = Text(master, height=1, width = 21)
     pointTotalText.grid(row=270, column=62, columnspan=21, sticky=W)
     pointTotalText.insert(INSERT, "Point Limit")
